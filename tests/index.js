@@ -2,25 +2,27 @@ const boot = require('../app').boot
 const shutdown = require('../app').shutdown
 const port = require('../app').port
 const superagent = require('superagent')
-const expect = require('expect')
+//const expect = require('expect')
+const assert = require('assert')
 
-describe('server', () => {
-  before(() => {
+describe('server', function () {
+  before( function () {
     boot()
   })
 
-  describe('homepage', () => {
-    it('should respond to GET', (done) => {
+  describe('homepage', function () {
+    it('should respond to GET', function (done) {
       superagent
         .get(`http://localhost:${port}`)
-        .end((error, response) => {
-          expect(response.status).to.equal(200)
+        .end( function (error, response) {
+          //expect(response.status).to.equal(200)
+          assert.equal(response.status,200,true)
           done()
         })
     })
   })
 
-  after(() => {
+  after( function () {
     shutdown()
   })
 })
