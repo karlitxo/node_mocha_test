@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "node app.js",
+    "start":"pm2 start app.js",
     "test": "mocha tests --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml"
   },
   "dependencies": {
