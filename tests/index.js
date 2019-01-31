@@ -15,7 +15,7 @@ describe('server', function () {
   describe('homepage', function () {
     it('should respond to GET', function (done) {
       superagent
-        .get('http://127.0.0.1:3000')
+        .get('http://0.0.0.0:3000')
         .end( function (error, response) {
           //expect(response.status).to.equal(200)
           assert.equal(response.status,200)

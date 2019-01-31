@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "node app.js",
-    "test": "mocha test --reporter mocha-junit-reporter"
+    "test": "mocha test --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
