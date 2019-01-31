@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "test": "mocha tests/index.js"
+    "test": "mocha tests"
   },
   "dependencies": {
-    "express": "~4.16.0",
-    "jade": "~1.11.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "http-errors": "~1.6.2"
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "pug": "^2.0.3"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
