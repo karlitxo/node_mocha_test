@@ -3,6 +3,8 @@ const shutdown = require('../app').shutdown
 const port = require('../app').port
 const superagent = require('superagent')
 //const expect = require('expect')
+//import chai from 'chai';
+//import chaiHttp from 'chai-http';
 const assert = require('assert')
 
 describe('server', function () {
@@ -13,10 +15,10 @@ describe('server', function () {
   describe('homepage', function () {
     it('should respond to GET', function (done) {
       superagent
-        .get(`http://localhost:${port}`)
+        .get('http://127.0.0.1:3000')
         .end( function (error, response) {
           //expect(response.status).to.equal(200)
-          assert.equal(response.status,200,true)
+          assert.equal(response.status,200)
           done()
         })
     })
