@@ -33,15 +33,3 @@ steps:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
     includeRootFolder: false
 - task: PublishBuildArtifacts@1
-
-# - script: |
-#     npm install
-#     npx mocha
-#     npm test
-#     npm run build
-#   displayName: 'npm install, test and start'
-# - task: PublishTestResults@2
-#   condition: succeededOrFailed()
-#   inputs:
-#     testRunner: JUnit
-#     testResultsFiles: '**/TEST-RESULTS.xml'

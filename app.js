@@ -1,24 +1,18 @@
-const express = require('express')
+const express = require('express');
+const http = require('http');
+const path = require('path');
+const app = express();
 
-const http = require('http')
-const path = require('path')
-
-const app = express()
-
-app.set('port', process.env.PORT || 3000)
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'pug')
-app.set('app-name', 'node ci test')
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+app.set('app-name', 'node ci test');
 
 app.all('*', (req, res) => {
-  res.render('index', {title: 'Howdy, stranger!', msg: 'Welcome to ' + app.get('app-name')})
+  res.render('index', {title: 'Howdy, stranger!', msg: 'Welcome to ' + app.get('app-name')});
 })
 
-// http.createServer(app).listen(app.get('port'), () => {
-  // console.log('Express server listening on port ' + app.get('port'))
-// })
-
-const server = http.createServer(app)
+const server = http.createServer(app);
 const boot = () => {
   server.listen(app.get('port'), () => {
     console.info(`Express server listening on port ${app.get('port')}`)
